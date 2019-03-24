@@ -62,3 +62,4 @@ typings/
 .env.local
 .project
 /package-lock.json
+TODO.md
