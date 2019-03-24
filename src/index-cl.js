@@ -13,6 +13,8 @@ const
   throng = require('throng');
   
 const index = require('./controllers/index');
+const verify = require('./controllers/verify');
+
 let {
   redisOptions
 } = require('./helpers/redis');
@@ -70,6 +72,7 @@ function startWorker(workerId) {
   app.locals.workerId = workerId;
   
   app.use(index.router);
+  app.use('/', verify.router);
   
   module.exports = app.listen(PORT, () => logger.info(`Listening on ${ PORT } / ${workerId}`));
 }

@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
   const _myDate = (new Date()).toLocaleString();
   res.render('index', { data: _myDate });
 });
-  
+
 router.get('/get:ext(.json|.html)?', (req, res) => {
   
   const ext = req.params.ext || '.json';
