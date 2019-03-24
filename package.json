@@ -62,5 +62,10 @@
     "redis",
     "cache"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "nodemonConfig": {
+    "ignore": ["test/*", "public/*"],
+    "verbose": true,
+    "colours": true
+  }
 }
