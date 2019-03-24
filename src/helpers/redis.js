@@ -1,7 +1,7 @@
 'use strict';
 
 const redisOptions = {
-  url: process.env.c,
+  url: process.env.REDIS_URL,
   no_ready_check: true,
   retry_strategy: (options) => {
     if (options.error && options.error.code === 'ECONNREFUSED') {
