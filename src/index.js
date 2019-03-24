@@ -12,6 +12,8 @@ const
   redis = require('redis');
   
 const index = require('./controllers/index');
+const verify = require('./controllers/verify');
+
 let {
   redisOptions
 } = require('./helpers/redis');
@@ -48,6 +50,7 @@ app.locals.client = client;
 app.locals.expiresIn = CACHE_TTL;
 
 app.use('/', index.router);
+app.use('/', verify.router);
 
 module.exports = app.listen(PORT, () => logger.info(`Listening on ${ PORT }`));
 
