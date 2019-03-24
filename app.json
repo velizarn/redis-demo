@@ -3,7 +3,12 @@
   "description": "A demo setup for Redis",
   "repository": "https://github.com/velizarn/redis-demo.git",
   "logo": "https://cdn.jsdelivr.net/gh/heroku/node-js-getting-started@master/public/node.svg",
-  "keywords": ["node", "express", "redis"],
+  "keywords": [
+    "expressjs",
+    "heroku",
+    "node",
+    "redis"
+  ],
   "image": "heroku/nodejs",
   "env": {
     "CACHE_TTL": {
@@ -13,8 +18,7 @@
     },
     "REDIS_URL": {
       "description": "The URL of the Redis server",
-      "value": "",
-      "required": true
+      "value": ""
     },
 	"REDIS_PASSWORD": {
       "description": "If set, client will run Redis auth command on connect. ",

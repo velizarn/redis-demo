@@ -2,27 +2,59 @@
   "name": "redis-demo",
   "version": "0.0.1",
   "description": "A sample Redis demo app using node.js",
-  "engines": {
-    "node": "9.11.1"
+  "author": {
+    "name": "Velizar Nenov",
+    "url": "https://velizarn.github.io/"
   },
-  "main": "index.js",
+  "engines": {
+    "node": "10.15.3"
+  },
+  "main": "src/index.js",
   "scripts": {
-    "start": "node index.js"
+    "config:get": "heroku config -s > .env.local",
+    "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
+    "heroku-postbuild": "echo This runs afterwards.",
+    "lint": "eslint --ext .js,.json,.jsx . --fix",
+    "start": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100 src/index.js",
+    "start:dev": "nodemon --optimize_for_size --max_old_space_size=920 --gc_interval=100 src/index.js",
+    "start:cluster": "nodemon --optimize_for_size --max_old_space_size=920 --gc_interval=100 src/index-cl.js",
+    "test": "cross-env NODE_ENV=test mocha",
+    "test:dev": "cross-env NODE_ENV=test mocha"
   },
   "dependencies": {
+    "babel-eslint": "10.0.1",
     "bluebird": "3.5.2",
-    "dotenv": "6.0.0",
-    "ejs": "2.5.6",
-    "express": "4.15.2",
-    "redis": "2.8.0"
+    "body-parser": "1.18.3",
+    "chai": "4.2.0",
+    "chai-http": "4.2.1",
+    "dotenv": "6.2.0",
+    "ejs": "2.6.1",
+    "eslint-plugin-json": "1.3.2",
+    "express": "4.16.4",
+    "express-validator": "5.3.1",
+    "helmet": "3.15.1",
+    "heroku-logger": "0.3.3",
+    "http-auth": "3.2.3",
+    "mocha": "6.0.2",
+    "redis": "2.8.0",
+    "sqreen": "1.29.3",
+    "throng": "4.0.0"
   },
   "devDependencies": {
-    "request": "^2.81.0",
-    "tape": "^4.7.0"
+    "cross-env": "5.2.0",
+    "eslint": "5.15.1",
+    "eslint-config-prettier": "4.1.0",
+    "eslint-plugin-prettier": "3.0.1",
+    "eslint-plugin-security": "1.4.0",
+    "nodemon": "1.18.10",
+    "prettier": "1.16.4",
+    "request": "2.88.0",
+    "request-promise": "4.2.4",
+    "tape": "4.10.1"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/velizarn/redis-demo.git"
   },
   "keywords": [
     "node",
