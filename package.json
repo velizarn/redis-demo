@@ -37,6 +37,8 @@
     "http-auth": "3.2.3",
     "mocha": "6.0.2",
     "redis": "2.8.0",
+    "request": "2.88.0",
+    "request-promise": "4.2.4",
     "sqreen": "1.29.3",
     "throng": "4.0.0"
   },
@@ -48,8 +50,6 @@
     "eslint-plugin-security": "1.4.0",
     "nodemon": "1.18.10",
     "prettier": "1.16.4",
-    "request": "2.88.0",
-    "request-promise": "4.2.4",
     "tape": "4.10.1"
   },
   "repository": {
