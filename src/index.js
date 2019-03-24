@@ -49,7 +49,7 @@ app.locals.expiresIn = CACHE_TTL;
 
 app.use('/', index.router);
 
-module.exports = app.listen(PORT, () => logger.info(`Listening on ${ PORT }`));
+app.listen(PORT, () => logger.info(`Listening on ${ PORT }`));
 
 /**
  * https://stackoverflow.com/questions/9765215/global-variable-in-app-js-accessible-in-routes
