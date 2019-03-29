@@ -14,13 +14,7 @@ const router = new express.Router();
 
 router.get('/', (req, res) => {
   const _myDate = (new Date()).toLocaleString();
-  if (req.session.views) {
-    req.session.views++;
-  } else {
-    req.session.views = 1;
-  }
-  req.session.myDate = _myDate;
-  res.send({ data: _myDate, session: req.session });
+  res.render('index', { data: _myDate, session: req.session });
 });
 
 router.get('/sess/get', (req, res) => {
