@@ -9,17 +9,18 @@
   "engines": {
     "node": "10.15.3"
   },
-  "main": "src/index.js",
+  "main": "src/web.js",
   "scripts": {
     "config:get": "heroku config -s > .env.local",
     "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
     "heroku-postbuild": "echo This runs afterwards.",
     "lint": "eslint --ext .js,.json,.jsx . --fix",
-    "start": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100 src/index.js",
-    "start:dev": "nodemon --optimize_for_size --max_old_space_size=920 --gc_interval=100 src/index.js",
-    "start:cluster": "nodemon --optimize_for_size --max_old_space_size=920 --gc_interval=100 src/index-cl.js",
-    "test": "cross-env NODE_ENV=test mocha",
-    "test:dev": "cross-env NODE_ENV=test mocha"
+    "start": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100 src/web.js",
+    "start:dev": "nodemon --optimize_for_size --max_old_space_size=920 --gc_interval=100 src/web.js",
+    "start:cluster": "nodemon --optimize_for_size --max_old_space_size=920 --gc_interval=100 src/web-cl.js",
+    "start:local": "nf start",
+    "test": "cross-env NODE_ENV=test mocha --exit",
+    "test:dev": "cross-env NODE_ENV=test mocha --exit"
   },
   "dependencies": {
     "babel-eslint": "10.0.1",
@@ -27,10 +28,12 @@
     "body-parser": "1.18.3",
     "chai": "4.2.0",
     "chai-http": "4.2.1",
+    "connect-redis": "3.4.1",
     "dotenv": "6.2.0",
     "ejs": "2.6.1",
     "eslint-plugin-json": "1.3.2",
     "express": "4.16.4",
+    "express-session": "1.15.6",
     "express-validator": "5.3.1",
     "helmet": "3.15.1",
     "heroku-logger": "0.3.3",
@@ -48,6 +51,7 @@
     "eslint-config-prettier": "4.1.0",
     "eslint-plugin-prettier": "3.0.1",
     "eslint-plugin-security": "1.4.0",
+    "foreman": "3.0.1",
     "nodemon": "1.18.10",
     "prettier": "1.16.4",
     "tape": "4.10.1"
@@ -64,7 +68,10 @@
   ],
   "license": "MIT",
   "nodemonConfig": {
-    "ignore": ["test/*", "public/*"],
+    "ignore": [
+      "test/*",
+      "public/*"
+    ],
     "verbose": true,
     "colours": true
   }
