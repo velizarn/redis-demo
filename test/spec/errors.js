@@ -7,7 +7,7 @@ const should = chai.should();
 const chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 
-const server = require('../../src/index');
+const server = require('../../src/web');
 
 describe('If you try to access a non-existing page', () => {
   it('it should show status 404', (done) => {
