@@ -4,78 +4,62 @@
 
 const
   express = require('express'),
-  logger = require('heroku-logger'),
-  redis = require('redis'),
   request = require('request-promise');
-  
+
 const {
   getUUIDHeaders
 } = require('../helpers/httpbin');
-
+  
 const router = new express.Router();
 
 router.get('/', (req, res) => {
   const _myDate = (new Date()).toLocaleString();
-  res.render('index', { data: _myDate });
+  res.render('index', { data: _myDate, session: req.session });
 });
 
-router.get('/get:ext(.json|.html)?', (req, res) => {
+router.get('/sess/get', (req, res) => {
   
-  const ext = req.params.ext || '.json';
-  
-  const redisClient = req.app.locals.client;
-  const expiresIn = req.app.locals.expiresIn;
-   
-  const optionsUuid = getUUIDHeaders();
+  const logger = req.app.locals.logger;
   
   let workerStr = '';
+  
   if ('workerId' in req.app.locals) {
     const workerId = parseInt(req.app.locals.workerId);
     workerStr = `/ ${workerId}`;
   }
   
-  redisClient.getAsync('uuidtest')
-    .then((uuid) => {
-      if (uuid) {
-        return [uuid];
-      }
-      else {
-        return Promise.all(['__expired__', request(optionsUuid)]);
-      }
-    })
+  let uuid = req.session.uuid || '__empty__';
+  let getUuidPromise = null;
+  
+  if (uuid === '__empty__') {
+    getUuidPromise = request(getUUIDHeaders());
+  }
+  
+  Promise.all([uuid, getUuidPromise])
     .then((result) => {
       let [uuid, remotedata] = result;
-      if (uuid === '__expired__') {
+      if (uuid === '__empty__') {
         if ('uuid' in remotedata) {
           uuid = remotedata.uuid;
-          redisClient.set('uuidtest', uuid, 'EX', expiresIn);
-          logger.info(`Retrieve UUID value: ${uuid}${workerStr}`);
+          logger.info(`Calculate UUID value: ${uuid}${workerStr}`);
+          req.session.uuid = uuid;
+          return uuid;
         }
-        else throw new Error('Unable to retrieve UUID from remote server.');
+        else throw new Error('Unable to compute UUID value.');
       }
       else {
-        logger.info(`Retrieve UUID value from cache: ${uuid}${workerStr}`);
+        logger.info(`Retrieve UUID value from session: ${uuid}${workerStr}`);
+        return uuid;
       }
-      if (ext === '.json') {
-        res.setHeader('Content-Type', 'application/json');
-        res.send({result: 'success'});
-      }
-      else {
-        res.setHeader('Content-Type', 'text/html');
-        res.send('Result: success');
-      }
+    })
+    .then((uuid) => {
+      res.send({ result: uuid, session: req.session });
     })
     .catch((err) => {
       logger.error(err + '');
       res.status(500);
-      if (ext === '.json') {
-        res.setHeader('Content-Type', 'application/json');
-        res.send({result: 'failed'});
-      }
-      else {
-        res.setHeader('Content-Type', 'text/html');
-        res.send('Result: failed');
-      }
+      res.setHeader('Content-Type', 'application/json');
+      res.send({result: 'failed'});
     });
 });
 
