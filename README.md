@@ -1,4 +1,4 @@
-# Redis session management with Node.js
+# Node.js session management with Redis
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
