@@ -55,6 +55,11 @@ Configured via environment variables.
 
 For local development, set these values in `.env` file.
 
+```
+REDIS_URL - The URL of the Redis server
+REDIS_PASSWORD - If set, client will run Redis auth command on connect
+```
+
 For Heroku deployment, set these values via [Config Vars](https://devcenter.heroku.com/articles/config-vars).
 
 ## Useful Redis commands
