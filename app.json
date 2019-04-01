@@ -1,28 +1,35 @@
 {
   "name": "Node.js Redis demo",
-  "description": "A demo setup for Redis",
+  "description": "A demo setup for using Redis to handle session in Node.js",
   "repository": "https://github.com/velizarn/redis-demo.git",
   "logo": "https://cdn.jsdelivr.net/gh/heroku/node-js-getting-started@master/public/node.svg",
   "keywords": [
+    "connect-redis",
     "expressjs",
+    "express-session",
     "heroku",
     "node",
-    "redis"
+    "redis",
+    "redis-session"
   ],
-  "image": "heroku/nodejs",
+  "buildpacks": [
+    { "url": "heroku/nodejs" }
+  ],
+  "addons": [
+    "heroku-redis:hobby-dev"
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free",
+      "command": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100 src/web-cl.js"
+    }
+  },
   "env": {
     "CACHE_TTL": {
       "description": "TTL for session, in seconds",
       "value": "3600",
       "required": true
-    },
-    "REDIS_URL": {
-      "description": "The URL of the Redis server",
-      "value": ""
-    },
-    "REDIS_PASSWORD": {
-      "description": "If set, client will run Redis auth command on connect",
-      "value": ""
     }
   }
 }
