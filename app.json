@@ -12,16 +12,16 @@
   "image": "heroku/nodejs",
   "env": {
     "CACHE_TTL": {
-      "description": "TTL for cached values",
-      "value": "600",
+      "description": "TTL for session, in seconds",
+      "value": "3600",
       "required": true
     },
     "REDIS_URL": {
       "description": "The URL of the Redis server",
       "value": ""
     },
-	"REDIS_PASSWORD": {
-      "description": "If set, client will run Redis auth command on connect. ",
+    "REDIS_PASSWORD": {
+      "description": "If set, client will run Redis auth command on connect",
       "value": ""
     }
   }
