@@ -30,6 +30,9 @@
       "description": "TTL for session, in seconds",
       "value": "3600",
       "required": true
+    },
+    "LOG_LEVEL": {
+      "value": "info"
     }
   }
 }
