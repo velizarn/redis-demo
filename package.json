@@ -52,7 +52,7 @@
     "eslint-plugin-security": "1.4.0",
     "foreman": "3.0.1",
     "nodemon": "1.18.11",
-    "prettier": "1.16.4",
+    "prettier": "1.17.0",
     "tape": "4.10.1"
   },
   "repository": {
