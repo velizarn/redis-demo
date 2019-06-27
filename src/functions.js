@@ -6,7 +6,7 @@
  */
 const isEmptyObject = (obj) => {
   for (var key in obj) {
-    if(obj.hasOwnProperty(key))
+    if(Object.prototype.hasOwnProperty.call(obj, key))
       return false;
   }
   return true;
