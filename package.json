@@ -36,7 +36,7 @@
     "express-validator": "6.0.1",
     "helmet": "3.18.0",
     "heroku-logger": "0.3.3",
-    "mocha": "6.1.4",
+    "mocha": "6.2.0",
     "redis": "2.8.0",
     "request": "2.88.0",
     "request-promise": "4.2.4",
