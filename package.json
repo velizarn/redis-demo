@@ -7,7 +7,7 @@
     "url": "https://velizarn.github.io/"
   },
   "engines": {
-    "node": "10.16.2"
+    "node": "10.16.3"
   },
   "main": "src/web.js",
   "scripts": {
