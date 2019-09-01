@@ -33,7 +33,7 @@
     "ejs": "2.6.2",
     "express": "4.17.1",
     "express-session": "1.16.2",
-    "express-validator": "6.1.1",
+    "express-validator": "6.2.0",
     "helmet": "3.20.1",
     "heroku-logger": "0.3.3",
     "mocha": "6.2.0",
