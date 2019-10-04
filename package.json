@@ -44,7 +44,7 @@
     "throng": "4.0.0"
   },
   "devDependencies": {
-    "cross-env": "5.2.1",
+    "cross-env": "6.0.3",
     "eslint": "6.5.1",
     "eslint-config-prettier": "6.3.0",
     "eslint-plugin-json": "1.4.0",
