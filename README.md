@@ -80,17 +80,31 @@ Some commands that may help you while you are debugging and testing your new ext
 
 ## Useful links
 
+### Managing sessions with Redis
+
 - https://medium.com/mtholla/managing-node-js-express-sessions-with-redis-94cd099d6f2f
 - https://expressjs.com/en/resources/middleware/cookie-session.html
 - https://www.npmjs.com/package/express-session
 - https://www.npmjs.com/package/connect-redis
 - https://stackoverflow.com/questions/16209145/how-to-set-cookie-in-node-js-using-express-framework
 - https://codeforgeek.com/2015/07/using-redis-to-handle-session-in-node-js/
+
+### Redis
+
 - [Download and install Redis](https://redis.io/download)
 - [Redis Protocol Specification](https://redis.io/topics/protocol)
 - [Redis Commands](https://redis.io/commands)
 - [Redis Clients for Node.js](https://redis.io/clients#nodejs)
 - [redis tag on Stack Overflow](https://stackoverflow.com/questions/tagged/redis)
+
+### node_redis
+
 - [node_redis Documentation](http://redis.js.org/)
 - [node_redis GitHub](https://github.com/noderedis/node_redis)
 - [node_redis tag on Stack Overflow](https://stackoverflow.com/questions/tagged/node-redis)
+
+### Heroku
+- [Heroku Dev Center](https://devcenter.heroku.com/)
+- [Heroku Redis](https://devcenter.heroku.com/categories/heroku-redis)
+- [Heroku Node.js support](https://devcenter.heroku.com/categories/nodejs-support)
+- [heroku tag on Stack Overflow](https://stackoverflow.com/questions/tagged/heroku)
