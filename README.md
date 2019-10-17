@@ -86,3 +86,11 @@ Some commands that may help you while you are debugging and testing your new ext
 - https://www.npmjs.com/package/connect-redis
 - https://stackoverflow.com/questions/16209145/how-to-set-cookie-in-node-js-using-express-framework
 - https://codeforgeek.com/2015/07/using-redis-to-handle-session-in-node-js/
+- [Download and install Redis](https://redis.io/download)
+- [Redis Protocol Specification](https://redis.io/topics/protocol)
+- [Redis Commands](https://redis.io/commands)
+- [Redis Clients for Node.js](https://redis.io/clients#nodejs)
+- [redis tag on Stack Overflow](https://stackoverflow.com/questions/tagged/redis)
+- [node_redis Documentation](http://redis.js.org/)
+- [node_redis GitHub](https://github.com/noderedis/node_redis)
+- [node_redis tag on Stack Overflow](https://stackoverflow.com/questions/tagged/node-redis)
