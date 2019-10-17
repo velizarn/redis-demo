@@ -32,7 +32,7 @@
     "dotenv": "8.1.0",
     "ejs": "2.7.1",
     "express": "4.17.1",
-    "express-session": "1.16.2",
+    "express-session": "1.17.0",
     "express-validator": "6.2.0",
     "helmet": "3.21.1",
     "heroku-logger": "0.3.3",
