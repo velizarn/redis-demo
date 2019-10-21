@@ -78,6 +78,21 @@ Some commands that may help you while you are debugging and testing your new ext
 
 [Comprehensive list of Redis commands](https://redis.io/commands)
 
+[Redis Data Types](https://redis.io/topics/data-types)
+
+You need to know what type of value that key maps to, as for each data type, the command to retrieve it is different.
+
+Here are the commands to retrieve key value:
+- if value is of type string -> [GET](https://redis.io/commands/get) \<key\>
+- if value is of type hash -> [HGETALL](https://redis.io/commands/hgetall) \<key\>
+- if value is of type lists -> [LRANGE](https://redis.io/commands/lrange) \<key\> \<start\> \<end\>
+- if value is of type sets -> [SMEMBERS](https://redis.io/commands/smembers) \<key\>
+- if value is of type sorted sets -> [ZRANGE](https://redis.io/commands/zrange) \<key\> \<min\> \<max\>
+ 
+command to check the type of value a key mapping to:
+
+[TYPE](https://redis.io/commands/type) \<key\>
+
 ## Useful links
 
 ### Managing sessions with Redis
