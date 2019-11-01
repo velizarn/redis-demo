@@ -40,7 +40,7 @@
     "redis": "2.8.0",
     "request": "2.88.0",
     "request-promise": "4.2.4",
-    "sqreen": "1.36.1",
+    "sqreen": "1.37.0",
     "throng": "4.0.0"
   },
   "devDependencies": {
