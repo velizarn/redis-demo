@@ -14,6 +14,8 @@ const router = new express.Router();
 
 router.get('/', (req, res) => {
   const _myDate = (new Date()).toLocaleString();
+  const requestId = req.headers('x-request-id') || 'n/a';
+  console.log(`requestId: ${requestId}`);
   res.render('index', { data: _myDate, session: req.session });
 });
 
