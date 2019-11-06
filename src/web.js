@@ -27,6 +27,7 @@ if (REDIS_PASSWORD !== '') {
 
 const
   bodyParser = require('body-parser'),
+  compression = require('compression'),
   express = require('express'),
   helmet = require('helmet'),
   Logger = require('heroku-logger').Logger,
@@ -47,6 +48,15 @@ redisClient.on('error', (err) => {
   logger.error('Redis error: ', err);
 });
 
+const shouldCompress = (req, res) => {
+  if (req.headers['x-no-compression']) {
+    // don't compress responses with this request header
+    return false;
+  }
+  // fallback to standard filter function
+  return compression.filter(req, res);
+};
+
 app
   .use(session({
     secret: SESSION_COOKIE_SECRET,
@@ -64,6 +74,7 @@ app
   .set('views', path.join(__dirname, '../views'))
   .set('view engine', 'ejs')
   .use(helmet())
+  .use(compression({ filter: shouldCompress, level: 6 }))
   .use(bodyParser.urlencoded({ extended: false }))
   .use(bodyParser.json());
 
