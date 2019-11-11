@@ -19,6 +19,7 @@
     "start:local": "nf start",
     "test": "cross-env NODE_ENV=test mocha --timeout 10000 --exit",
     "test:dev": "cross-env NODE_ENV=test mocha --timeout 15000 --exit",
+    "update:dev": "rm -rf node_modules && rm -rf package-lock.json && npm cache clean --force && npm install && npm dedupe && npm audit fix",
     "watch": "nodemon --optimize_for_size --max_old_space_size=920 --gc_interval=100 src/web.js",
     "watch:cluster": "nodemon --optimize_for_size --max_old_space_size=920 --gc_interval=100 src/web-cl.js"
   },
