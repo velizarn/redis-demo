@@ -42,15 +42,17 @@
     },
     "TZ": {
       "description": "Set time zone for your application",
-      "value": "info"
+      "value": "Europe/Sofia"
     },
     "VERIFICATION_CONTENT": {
       "description": "Verification file content (loader.io)",
-      "value": ""
+      "value": "",
+      "required": false
     },
     "VERIFICATION_URI": {
       "description": "Verification file endpoint (loader.io)",
-      "value": ""
+      "value": "",
+      "required": false
     },
     "WEB_CONCURRENCY": {
       "value": "2"

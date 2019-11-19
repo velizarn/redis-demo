@@ -24,11 +24,8 @@
     "watch:cluster": "nodemon --optimize_for_size --max_old_space_size=920 --gc_interval=100 src/web-cl.js"
   },
   "dependencies": {
-    "babel-eslint": "10.0.3",
     "bluebird": "3.7.1",
     "body-parser": "1.19.0",
-    "chai": "4.2.0",
-    "chai-http": "4.3.0",
     "compression": "1.7.4",
     "connect-redis": "4.0.3",
     "dotenv": "8.2.0",
@@ -38,13 +35,15 @@
     "express-validator": "6.2.0",
     "helmet": "3.21.2",
     "heroku-logger": "0.3.3",
-    "mocha": "6.2.2",
     "redis": "2.8.0",
     "request": "2.88.0",
     "request-promise": "4.2.5",
     "throng": "4.0.0"
   },
   "devDependencies": {
+    "babel-eslint": "10.0.3",
+    "chai": "4.2.0",
+    "chai-http": "4.3.0",
     "cross-env": "6.0.3",
     "eslint": "6.6.0",
     "eslint-config-prettier": "6.7.0",
@@ -52,9 +51,9 @@
     "eslint-plugin-prettier": "3.1.1",
     "eslint-plugin-security": "1.4.0",
     "foreman": "3.0.1",
+    "mocha": "6.2.2",
     "nodemon": "1.19.4",
-    "prettier": "1.19.1",
-    "tape": "4.11.0"
+    "prettier": "1.19.1"
   },
   "repository": {
     "type": "git",
