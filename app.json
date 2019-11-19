@@ -13,10 +13,16 @@
     "redis-session"
   ],
   "buildpacks": [
-    { "url": "heroku/nodejs" }
+    { "url": "heroku/nodejs" },
+    { "url": "velizarn/heroku-buildpack-nano" },
+    { "url": "velizarn/heroku-buildpack-securekey" },
+    { "url": "https://github.com/ianpurvis/heroku-buildpack-version" }
   ],
   "addons": [
-    "heroku-redis:hobby-dev"
+    "heroku-redis:hobby-dev",
+    "ice:test",
+    "loaderio:basic",
+    "redismonitor:free"
   ],
   "formation": {
     "web": {
@@ -33,6 +39,21 @@
     },
     "LOG_LEVEL": {
       "value": "info"
+    },
+    "TZ": {
+      "description": "Set time zone for your application",
+      "value": "info"
+    },
+    "VERIFICATION_CONTENT": {
+      "description": "Verification file content (loader.io)",
+      "value": ""
+    },
+    "VERIFICATION_URI": {
+      "description": "Verification file endpoint (loader.io)",
+      "value": ""
+    },
+    "WEB_CONCURRENCY": {
+      "value": "2"
     }
   }
 }
