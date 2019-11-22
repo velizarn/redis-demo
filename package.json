@@ -52,7 +52,7 @@
     "eslint-plugin-security": "1.4.0",
     "foreman": "3.0.1",
     "mocha": "6.2.2",
-    "nodemon": "1.19.4",
+    "nodemon": "2.0.1",
     "prettier": "1.19.1"
   },
   "repository": {
