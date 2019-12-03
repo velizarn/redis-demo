@@ -29,10 +29,10 @@
     "compression": "1.7.4",
     "connect-redis": "4.0.3",
     "dotenv": "8.2.0",
-    "ejs": "2.7.3",
+    "ejs": "3.0.1",
     "express": "4.17.1",
     "express-session": "1.17.0",
-    "express-validator": "6.2.0",
+    "express-validator": "6.3.0",
     "helmet": "3.21.2",
     "heroku-logger": "0.3.3",
     "redis": "2.8.0",
@@ -52,7 +52,7 @@
     "eslint-plugin-security": "1.4.0",
     "foreman": "3.0.1",
     "mocha": "6.2.2",
-    "nodemon": "1.19.4",
+    "nodemon": "2.0.1",
     "prettier": "1.19.1"
   },
   "repository": {
