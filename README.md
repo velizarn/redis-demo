@@ -1,5 +1,7 @@
 # Node.js session management with Redis
 
+![Node CI](https://github.com/velizarn/redis-demo/workflows/Node%20CI/badge.svg)
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ![Redis session management with Node.js](public/img/redis-node.png)
