@@ -61,5 +61,4 @@ typings/
 .next
 .env.local
 .project
-/package-lock.json
 TODO.md
