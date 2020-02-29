@@ -36,7 +36,7 @@
     "helmet": "3.21.2",
     "heroku-logger": "0.3.3",
     "redis": "3.0.2",
-    "request": "2.88.0",
+    "request": "2.88.2",
     "request-promise": "4.2.5",
     "throng": "4.0.0"
   },
