@@ -20,7 +20,6 @@
   ],
   "addons": [
     "heroku-redis:hobby-dev",
-    "ice:test",
     "loaderio:basic",
     "redismonitor:free"
   ],
