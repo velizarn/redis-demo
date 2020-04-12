@@ -11,12 +11,12 @@
   },
   "main": "src/web.js",
   "scripts": {
-    "config:get": "heroku config -s > .env.local",
     "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
     "heroku-postbuild": "echo This runs afterwards.",
     "lint": "eslint --ext .js,.json,.jsx . --fix",
     "start": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100 src/web.js",
     "start:local": "nf start",
+    "stop:all": "taskkill /f /im node.exe",
     "test": "cross-env NODE_ENV=test mocha --timeout 10000 --exit",
     "test:dev": "cross-env NODE_ENV=test mocha --timeout 15000 --exit",
     "update:dev": "rm -rf node_modules && rm -rf package-lock.json && npm cache clean --force && npm install && npm dedupe && npm audit fix",
@@ -52,8 +52,8 @@
     "eslint-plugin-security": "1.4.0",
     "foreman": "3.0.1",
     "mocha": "7.1.1",
-    "nodemon": "2.0.2",
-    "prettier": "2.0.2"
+    "nodemon": "2.0.3",
+    "prettier": "2.0.4"
   },
   "repository": {
     "type": "git",
