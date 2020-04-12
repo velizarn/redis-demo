@@ -28,7 +28,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         
-    - name: Start Redis
+    - name: Start Redis Server
       uses: supercharge/redis-github-action@1.1.0
       with:
         redis-version: ${{ matrix.redis-version }}
