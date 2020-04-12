@@ -62,3 +62,4 @@ typings/
 .env.local
 .project
 TODO.md
+.vscode/settings.json

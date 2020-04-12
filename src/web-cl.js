@@ -13,28 +13,18 @@ const {
   NODE_ENV,
   LOG_LEVEL = 'error',
   PORT = defaults.appPort,
-  REDIS_PASSWORD = '',
   REDIS_URL,
   SESSION_COOKIE_SECRET = defaults.sessionCookieSecret,
   SESSION_NAME = defaults.sessionCookieId
 } = process.env;
   
-let {
-  redisOptions
-} = require('./helpers/redis');
-
-if (REDIS_PASSWORD !== '') {
-  redisOptions.password = REDIS_PASSWORD;
-}
-
 const
   bodyParser = require('body-parser'),
   express = require('express'),
   helmet = require('helmet'),
   Logger = require('heroku-logger').Logger,
   path = require('path'),
-  redis = require('redis'),
-  redisClient = redis.createClient(redisOptions),
+  redisClient = require('./helpers/redis'),
   session = require('express-session'),
   redisStore = require('connect-redis')(session),
   throng = require('throng');
