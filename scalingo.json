@@ -1,0 +1,44 @@
+{
+  "name": "Node.js Redis demo",
+  "description": "A demo setup for using Redis to handle session in Node.js",
+  "logo": "https://cdn.jsdelivr.net/gh/heroku/node-js-getting-started@master/public/node.svg",
+  "repository": "https://github.com/velizarn/redis-demo.git",
+  "env": {
+    "CACHE_TTL": {
+      "description": "TTL for session, in seconds",
+      "value": "3600",
+      "required": true
+    },
+    "LOG_LEVEL": {
+      "value": "info"
+    },
+    "TZ": {
+      "description": "Set time zone for your application",
+      "value": "Europe/Sofia"
+    },
+    "VERIFICATION_CONTENT": {
+      "description": "Verification file content (loader.io)",
+      "value": "",
+      "required": false
+    },
+    "VERIFICATION_URI": {
+      "description": "Verification file endpoint (loader.io)",
+      "value": "",
+      "required": false
+    },
+    "WEB_CONCURRENCY": {
+      "value": "2"
+    }
+  },
+  "addons": ["scalingo-redis:free"],
+  "scripts": {
+    "first-deploy": "echo 'first deployment'",
+    "postdeploy": "echo hello"
+  },
+  "formation": {
+    "web": {
+      "amount": 1,
+      "size": "S"
+    }
+  }
+}

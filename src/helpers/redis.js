@@ -1,7 +1,20 @@
 'use strict';
 
-const redisOptions = {
-  url: process.env.REDIS_URL,
+require('dotenv').config();
+
+const {
+  REDIS_PASSWORD = '',
+  REDIS_URL,
+  REDIS_CA = ''
+} = process.env;
+
+const 
+  bluebird = require('bluebird'),
+  redis = require('redis');
+
+const options = {
+  url: REDIS_URL,
+  enable_offline_queue: true,
   no_ready_check: true,
   retry_strategy: (options) => {
     if (options.error && options.error.code === 'ECONNREFUSED') {
@@ -18,6 +31,23 @@ const redisOptions = {
   }
 };
 
-module.exports = {
-  redisOptions
-};
+if (REDIS_PASSWORD !== '') {
+  options.password = REDIS_PASSWORD;
+}
+
+if (REDIS_CA !== '') {
+  options.tls = {
+    cert: REDIS_CA,
+    ca: [ REDIS_CA ]
+  };
+}
+
+redis.debug_mode = false;
+
+bluebird.promisifyAll(redis.RedisClient.prototype);
+
+const RedisClient = (() => {
+  return redis.createClient(REDIS_URL, options);
+})();
+
+module.exports = RedisClient;

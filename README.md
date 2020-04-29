@@ -4,6 +4,8 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
+[![Deploy on Scalingo](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy?source=https://github.com/velizarn/redis-demo)
+
 ![Redis session management with Node.js](public/img/redis-node.png)
 
 ## Local development

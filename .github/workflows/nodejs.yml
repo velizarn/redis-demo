@@ -17,14 +17,22 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.19.0, 12.x, 13.x]
+        node-version: [10.20.1, 12.x, 13.x]
+        redis-version: [5]
 
     steps:
     - uses: actions/checkout@v1
+      
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+        
+    - name: Start Redis Server ${{ matrix.redis-version }}
+      uses: supercharge/redis-github-action@1.1.0
+      with:
+        redis-version: ${{ matrix.redis-version }}
+     
     - name: npm install, dedupe, build, lint, and test
       run: |
         npm install
@@ -35,3 +43,4 @@ jobs:
       env:
         CI: true
         NODE_ENV: test
+        REDIS_URL: redis://127.0.0.1:6379
