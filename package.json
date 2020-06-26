@@ -33,7 +33,7 @@
     "express": "4.17.1",
     "express-session": "1.17.1",
     "express-validator": "6.4.0",
-    "helmet": "3.22.0",
+    "helmet": "3.23.3",
     "heroku-logger": "0.3.3",
     "redis": "3.0.2",
     "request": "2.88.2",
