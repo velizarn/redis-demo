@@ -44,3 +44,4 @@ jobs:
         CI: true
         NODE_ENV: test
         REDIS_URL: redis://127.0.0.1:6379
+        SECURE_KEY_STR: ${{ secrets.SECURE_KEY_STR }}
