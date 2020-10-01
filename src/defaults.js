@@ -15,7 +15,7 @@ module.exports = {
   
   sessionCookieTtl: 30, // min
   
-  sessionCookieSecret: SECURE_KEY_STR || 'NCiplUEZ',
+  sessionCookieSecret: SECURE_KEY_STR,
   
   cacheTtl: 86400, // sec
   
