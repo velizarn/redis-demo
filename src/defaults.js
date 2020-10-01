@@ -1,5 +1,11 @@
 'use strict';
 
+require('dotenv').config();
+
+const {
+  SECURE_KEY_STR
+} = process.env;
+
 /**
  * Default values for .env variables and global app vars
  */
@@ -9,7 +15,7 @@ module.exports = {
   
   sessionCookieTtl: 30, // min
   
-  sessionCookieSecret: 'NCiplUEZ',
+  sessionCookieSecret: SECURE_KEY_STR,
   
   cacheTtl: 86400, // sec
   
