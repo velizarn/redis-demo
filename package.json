@@ -54,7 +54,7 @@
     "foreman": "3.0.1",
     "mocha": "8.1.1",
     "nodemon": "2.0.4",
-    "prettier": "2.1.0"
+    "prettier": "2.1.2"
   },
   "repository": {
     "type": "git",
