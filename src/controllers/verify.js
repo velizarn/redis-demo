@@ -7,7 +7,7 @@ const
   logger = require('heroku-logger');
 
 require('dotenv').config();
-  
+
 const {
   VERIFICATION_URI = '',
   VERIFICATION_CONTENT = ''
@@ -24,7 +24,7 @@ if (VERIFICATION_URI !== '') {
 router.get('/verify', (req, res) => {
   res.send('Please update config_vars.');
 });
-  
+
 module.exports = {
   router
 };

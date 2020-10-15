@@ -31,7 +31,7 @@ const logger = new Logger({ level: LOG_LEVEL});
 
 const index = require('./controllers/index');
 const verify = require('./controllers/verify');
-  
+
 const app = express();
 
 const shouldCompress = (req, res) => {

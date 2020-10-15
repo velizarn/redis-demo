@@ -8,7 +8,7 @@ const {
   REDIS_CA = ''
 } = process.env;
 
-const 
+const
   bluebird = require('bluebird'),
   redis = require('redis');
 

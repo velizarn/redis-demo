@@ -17,7 +17,7 @@ const {
   SESSION_COOKIE_SECRET = defaults.sessionCookieSecret,
   SESSION_NAME = defaults.sessionCookieId
 } = process.env;
-  
+
 const
   bodyParser = require('body-parser'),
   express = require('express'),
@@ -30,7 +30,7 @@ const
   throng = require('throng');
 
 const logger = new Logger({ level: LOG_LEVEL});
-  
+
 const index = require('./controllers/index');
 const verify = require('./controllers/verify');
 
@@ -51,9 +51,9 @@ function startMaster() {
 }
 
 function startWorker(workerId) {
-  
+
   const app = express();
-  
+
   app
     .use(session({
       secret: SESSION_COOKIE_SECRET,
@@ -76,10 +76,10 @@ function startWorker(workerId) {
 
   app.locals.logger = logger;
   app.locals.client = redisClient;
-  
+
   app.use('/', index.router);
   app.use('/', verify.router);
-  
+
   module.exports = app.listen(PORT, () => logger.info(`Listening on ${ PORT } / ${workerId}`));
 }
 

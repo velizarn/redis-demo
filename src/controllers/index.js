@@ -9,7 +9,7 @@ const
 const {
   getUUIDHeaders
 } = require('../helpers/httpbin');
-  
+
 const router = new express.Router();
 
 router.get('/', (req, res) => {
@@ -20,23 +20,23 @@ router.get('/', (req, res) => {
 });
 
 router.get('/sess/get', (req, res) => {
-  
+
   const logger = req.app.locals.logger;
-  
+
   let workerStr = '';
-  
+
   if ('workerId' in req.app.locals) {
     const workerId = parseInt(req.app.locals.workerId);
     workerStr = `/ ${workerId}`;
   }
-  
+
   let uuid = req.session.uuid || '__empty__';
   let getUuidPromise = null;
-  
+
   if (uuid === '__empty__') {
     getUuidPromise = request(getUUIDHeaders());
   }
-  
+
   Promise.all([uuid, getUuidPromise])
     .then((result) => {
       let [uuid, remotedata] = result;
