@@ -1,7 +1,7 @@
 
 # Node.js session management with Redis
 
-![Node CI](https://github.com/velizarn/redis-demo/workflows/Node%20CI/badge.svg) [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/velizarn/redis-demo) 
+![Node CI](https://github.com/velizarn/redis-demo/workflows/Node%20CI/badge.svg) [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/velizarn/redis-demo) <a href="https://actions-badge.atrox.dev/velizarn/redis-demo/goto?ref=master"><img alt="Build Status" src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fvelizarn%2Fredis-demo%2Fbadge%3Fref%3Dmaster&style=flat" /></a>
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
