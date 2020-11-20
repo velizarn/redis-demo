@@ -23,6 +23,7 @@
     "loaderio:basic",
     "redismonitor:free"
   ],
+  "stack": "heroku-20",
   "formation": {
     "web": {
       "quantity": 1,
