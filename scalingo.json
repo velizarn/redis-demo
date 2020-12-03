@@ -32,8 +32,7 @@
   },
   "addons": ["redis:redis-sandbox"],
   "scripts": {
-    "first-deploy": "echo 'first deployment'",
-    "postdeploy": "echo hello"
+    "first-deploy": "echo 'first deployment'"
   },
   "formation": {
     "web": {
