@@ -30,7 +30,7 @@
       "value": "2"
     }
   },
-  "addons": ["scalingo-redis:free"],
+  "addons": ["redis:redis-sandbox"],
   "scripts": {
     "first-deploy": "echo 'first deployment'",
     "postdeploy": "echo hello"
